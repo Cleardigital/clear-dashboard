@@ -5,13 +5,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Slabo 13px', Serif;
+  /* font-family: 'Slabo 13px', Serif; */
+  font-family: 'Noto Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
   margin-bottom: 0;
 }
 
 p,
 span {
   font-family: 'Lato', Sans-Serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -167,7 +170,7 @@ aside {
   left: 0;
   top: 80px;
   height: 100%;
-  width: 250px;
+  width: 265px;
   -webkit-transition: 0.3s ease-in;
   -moz-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
@@ -266,6 +269,9 @@ aside {
   left: 0;
   top: 50%;
   transform: translate(0, -50%);
+}
+.action-buttons button {
+  margin-left: 10px;
 }
 
 /* Graph Classes */

@@ -12,7 +12,7 @@ class Google extends Component {
     super(props);
     this.state = {
       name: '',
-      cross: [null, null]
+      cross: [null, null],
     };
   }
 
@@ -28,46 +28,46 @@ class Google extends Component {
     const data = [
       {
         x: 'January',
-        y: 39000
+        y: 39000,
       },
       {
         x: 'Feb',
-        y: 56340
+        y: 56340,
       },
       {
         x: 'March',
-        y: 45320
+        y: 45320,
       },
       {
         x: 'April',
-        y: 20350
-      }
+        y: 20350,
+      },
     ];
     const tableData = [
       {
         key: '1',
         name: 'John Brown',
         age: 32,
-        address: 'New York No. 1 Lake Park'
+        address: 'New York No. 1 Lake Park',
       },
       {
         key: '2',
         name: 'Jim Green',
         age: 42,
-        address: 'London No. 1 Lake Park'
+        address: 'London No. 1 Lake Park',
       },
       {
         key: '3',
         name: 'Joe Black',
         age: 32,
-        address: 'Sidney No. 1 Lake Park'
+        address: 'Sidney No. 1 Lake Park',
       },
       {
         key: '4',
         name: 'Jim Red',
         age: 32,
-        address: 'London No. 2 Lake Park'
-      }
+        address: 'London No. 2 Lake Park',
+      },
     ];
     const columns = [
       {
@@ -76,11 +76,11 @@ class Google extends Component {
         filters: [
           {
             text: 'Joe',
-            value: 'Joe'
+            value: 'Joe',
           },
           {
             text: 'Jim',
-            value: 'Jim'
+            value: 'Jim',
           },
           {
             text: 'Submenu',
@@ -88,24 +88,24 @@ class Google extends Component {
             children: [
               {
                 text: 'Green',
-                value: 'Green'
+                value: 'Green',
               },
               {
                 text: 'Black',
-                value: 'Black'
-              }
-            ]
-          }
+                value: 'Black',
+              },
+            ],
+          },
         ],
         // specify the condition of filtering result
         // here is that finding the name started with `value`
         onFilter: (value, record) => record.name.indexOf(value) === 0,
-        sorter: (a, b) => a.name.length - b.name.length
+        sorter: (a, b) => a.name.length - b.name.length,
       },
       {
         title: 'Age',
         dataIndex: 'age',
-        sorter: (a, b) => a.age - b.age
+        sorter: (a, b) => a.age - b.age,
       },
       {
         title: 'Address',
@@ -113,17 +113,17 @@ class Google extends Component {
         filters: [
           {
             text: 'London',
-            value: 'London'
+            value: 'London',
           },
           {
             text: 'New York',
-            value: 'New York'
-          }
+            value: 'New York',
+          },
         ],
         filterMultiple: false,
         onFilter: (value, record) => record.address.indexOf(value) === 0,
-        sorter: (a, b) => a.address.length - b.address.length
-      }
+        sorter: (a, b) => a.address.length - b.address.length,
+      },
     ];
     return (
       <div className="dash-container">
@@ -133,7 +133,7 @@ class Google extends Component {
             <h1>Google</h1>
             <h2>Youtube, Google Music etc.</h2>
           </div>
-          <div>
+          <div className="action-buttons">
             <Button type="primary" size="large">
               Primary
             </Button>
@@ -148,7 +148,7 @@ class Google extends Component {
               title="Overall Data from Google"
               style={{
                 width: '100%',
-                height: '397px'
+                height: '397px',
               }}
             >
               <h1>Rich</h1>
@@ -158,14 +158,10 @@ class Google extends Component {
             <Card
               title="Overall Data from Google"
               style={{
-                width: '100%'
+                width: '100%',
               }}
             >
-              <VertBar
-                cross={this.state.cross}
-                data={data}
-                handleHover={this.handleHover}
-              />
+              <VertBar cross={this.state.cross} data={data} handleHover={this.handleHover} />
             </Card>
           </Col>
         </Row>
@@ -174,7 +170,7 @@ class Google extends Component {
             <Card
               title="Youtube Data"
               style={{
-                width: '100%'
+                width: '100%',
               }}
             >
               <h1>Bar</h1>
@@ -184,7 +180,7 @@ class Google extends Component {
             <Card
               title="Youtube Data"
               style={{
-                width: '100%'
+                width: '100%',
               }}
             >
               <h1>Bar</h1>
@@ -196,24 +192,16 @@ class Google extends Component {
             <Card
               title="Youtube Data"
               style={{
-                width: '100%'
+                width: '100%',
               }}
             >
-              <Table
-                columns={columns}
-                dataSource={tableData}
-                onChange={this.onChange}
-              />
+              <Table columns={columns} dataSource={tableData} onChange={this.onChange} />
             </Card>
           </Col>
         </Row>
       </div>
     );
   }
-
-  handleHover = event => {
-    console.log(event);
-  };
 }
 
 const mapStateToProps = state => ({ name: state.user.name });
@@ -221,7 +209,7 @@ const mapStateToProps = state => ({ name: state.user.name });
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      changePage: page => push(page)
+      changePage: page => push(page),
     },
     dispatch
   );

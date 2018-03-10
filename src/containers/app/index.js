@@ -83,7 +83,7 @@ class Main extends Component {
       if (user) {
         console.log(user);
         this.props.logIn(user.displayName, user.email, user.photoURL, user.uid);
-        this.props.changePage('/dashboard');
+        this.props.changePage('/');
       } else {
         this.props.logOut();
       }
@@ -100,7 +100,7 @@ class Main extends Component {
         <Switch>
           <PublicRoute authed={this.props.authed} path="/login" component={Login} />
 
-          <UserRoute authed={this.props.authed} path="/" component={Home} />
+          <UserRoute exact authed={this.props.authed} path="/" component={Home} />
 
           <DashboardRoute authed={this.props.authed} path="/dashboard" component={Dashboard} />
           <DashboardRoute authed={this.props.authed} path="/google" component={Google} />

@@ -15,7 +15,7 @@ class Home extends Component {
       name: null,
       imageUrl: null,
       phoneNumber: null,
-      currentUser: firebaseAuth().currentUser
+      currentUser: firebaseAuth().currentUser,
     };
   }
 
@@ -25,7 +25,7 @@ class Home extends Component {
     this.state.currentUser
       .updateProfile({
         displayName: this.state.name,
-        photoURL: this.state.imageUrl
+        photoURL: this.state.imageUrl,
       })
       .then(() => {
         // Update successful.
@@ -61,7 +61,7 @@ class Home extends Component {
             <h1>User Settings</h1>
             <h2>Update Info, Change Password, etc.</h2>
           </div>
-          <div>
+          <div className="action-buttons">
             <Button type="primary" size="large" onClick={this.onPrimaryClick}>
               Primary
             </Button>
@@ -114,7 +114,7 @@ const mapStateToProps = state => ({ name: state.user.name });
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      changePage: page => push(page)
+      changePage: page => push(page),
     },
     dispatch
   );

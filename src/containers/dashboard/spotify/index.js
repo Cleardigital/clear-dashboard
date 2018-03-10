@@ -229,7 +229,7 @@ class Spotify extends Component {
             <h1>Spotify</h1>
             <h2>Music Streaming.</h2>
           </div>
-          <div>
+          <div className="action-buttons">
             <Button type="primary" size="large">
               Primary
             </Button>

@@ -4,7 +4,9 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { TiTabsOutline } from 'react-icons/lib/ti';
+import { TiTabsOutline, TiChartPieOutline } from 'react-icons/lib/ti';
+import { FaSliders } from 'react-icons/lib/fa';
+import { GoInfo, GoOrganization } from 'react-icons/lib/go';
 
 import { Button } from 'antd';
 
@@ -27,13 +29,48 @@ class Home extends Component {
         <div className="user-container">
           <div className="action-bar">
             <div className="action-title">
-              <TiTabsOutline size={34} color="#fff" />
+              <TiTabsOutline size={36} color="#252739" />
               <h1>Home</h1>
               <h2>Welcome Back, {this.props.name}</h2>
             </div>
-            <Button type="primary" ghost="true" size="large" onClick={this.primeClick}>
-              Primary
-            </Button>
+            <div className="action-buttons">
+              <Button type="primary" ghost="true" size="large">
+                Secondary
+              </Button>
+              <Button type="primary" size="large">
+                Primary
+              </Button>
+            </div>
+          </div>
+          <div className="user-flex">
+            <Link to="dashboard">
+              <article>
+                <TiChartPieOutline size={34} color="#252739" />
+                <h1>Dashboard</h1>
+                <p>Et repellendus quia at iure aspernatur magni natus.</p>
+              </article>
+            </Link>
+            <Link to="dashboard">
+              <article>
+                <GoOrganization size={34} color="#252739" />
+                <h1>Accounts</h1>
+                <p>Et repellendus quia at iure aspernatur magni natus.</p>
+              </article>
+            </Link>
+            <Link to="settings">
+              <article>
+                <FaSliders size={34} color="#252739" />
+                <h1>Settings</h1>
+                <p>Et repellendus quia at iure aspernatur magni natus.</p>
+              </article>
+            </Link>
+            <Link to="dashboard">
+              <article>
+                <GoInfo size={34} color="#252739" />
+                <h1>Help</h1>
+                <p>Et repellendus quia at iure aspernatur magni natus.</p>
+              </article>
+            </Link>
           </div>
         </div>
       </div>

@@ -72,9 +72,11 @@ class Dashboard extends Component {
             <h1>Dashboard</h1>
             <h2>Welcome back, {this.props.name}</h2>
           </div>
-          <Button type="primary" ghost="true" size="large" onClick={this.primeClick}>
-            Primary
-          </Button>
+          <div className="action-buttons">
+            <Button type="primary" ghost="true" size="large" onClick={this.primeClick}>
+              Primary
+            </Button>
+          </div>
         </div>
         <Row gutter={16} style={{ margin: '0px -8px 20px' }}>
           <Col span={16}>
