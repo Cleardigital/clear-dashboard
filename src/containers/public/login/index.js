@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'; // eslint-disable-line no-use-before-de
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import { login, resetPassword } from '../../../helpers/auth';
 
-import './home.css';
+import './login.css';
 const FormItem = Form.Item;
 
 class NormalLoginForm extends Component {
@@ -39,7 +39,7 @@ class NormalLoginForm extends Component {
   };
 
   render() {
-    const { userName, password } = this.state;
+    // const { userName, password } = this.state;
     const { getFieldDecorator } = this.props.form;
 
     return (
@@ -50,6 +50,7 @@ class NormalLoginForm extends Component {
               <img
                 className="social-icon"
                 src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                alt="google icon"
               />
             </div>
             <p className="btn-text">
@@ -61,6 +62,7 @@ class NormalLoginForm extends Component {
               <img
                 className="social-icon"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/267px-F_icon.svg.png"
+                alt="facebook icon"
               />
             </div>
             <p className="btn-text">
@@ -77,7 +79,7 @@ class NormalLoginForm extends Component {
               })(
                 <Input
                   size="large"
-                  prefix={<Icon type="user" style={{ fontSize: '16px', color: 'rgba(0,0,0,.25)' }} />}
+                  prefix={<Icon type="mail" style={{ fontSize: '16px', color: 'rgba(0,0,0,.25)' }} />}
                   type="email"
                   placeholder="Email"
                 />
@@ -114,7 +116,7 @@ class NormalLoginForm extends Component {
             </FormItem>
           </Form>
           <div className="form-register">
-            No account yet? <a href="">Sign up for free!</a>
+            No account yet? <Link to="/register">Sign up for free!</Link>
           </div>
         </div>
       </div>

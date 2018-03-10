@@ -1,0 +1,22 @@
+.user-home {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #2b5876;
+  background: -webkit-linear-gradient(to -45deg, #4e4376, #2b5876);
+  background: linear-gradient(to -45deg, #4e4376, #2b5876);
+}
+.user-container {
+  height: auto;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.flex-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.action-title h1,
+.action-title h2 {
+  color: white;
+}

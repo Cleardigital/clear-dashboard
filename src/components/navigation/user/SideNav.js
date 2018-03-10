@@ -4,9 +4,9 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { toggleAccountModal } from '../../../modules/user';
-import { FaGoogle, FaSpotify, FaApple, FaSliders, FaCalendarO } from 'react-icons/lib/fa';
-import { MdDashboard, MdMore } from 'react-icons/lib/md';
 
+import { FaGoogle, FaSpotify, FaApple, FaSliders, FaCalendarO, FaInfoCircle } from 'react-icons/lib/fa';
+import { MdDashboard, MdMore } from 'react-icons/lib/md';
 import { Avatar, Card } from 'antd';
 
 class SideNav extends Component {
@@ -31,7 +31,7 @@ class SideNav extends Component {
               shape="square"
               style={{
                 color: '#fff',
-                backgroundColor: 'aquamarine'
+                backgroundColor: 'aquamarine',
               }}
               src={this.props.accountSelected !== null ? this.props.accountSelected.image : null}
             >
@@ -65,6 +65,11 @@ class SideNav extends Component {
             <FaCalendarO size={20} />
             <span>Events</span>
           </NavLink>
+          <br />
+          <NavLink activeClassName="selected" className="side-link" to="/settings">
+            <FaInfoCircle size={20} />
+            <span>Help</span>
+          </NavLink>
           <NavLink activeClassName="selected" className="side-link" to="/settings">
             <FaSliders size={20} />
             <span>Settings</span>
@@ -78,14 +83,14 @@ class SideNav extends Component {
 const mapStateToProps = state => ({
   name: state.player.player_name,
   isMin: state.user.is_min,
-  accountSelected: state.user.accountSelected
+  accountSelected: state.user.accountSelected,
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       toggleAccountModal,
-      changePage: page => push(page)
+      changePage: page => push(page),
     },
     dispatch
   );

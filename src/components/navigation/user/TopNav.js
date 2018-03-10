@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectAccount, minimize, unMinimize } from '../../../modules/user';
 import { logout } from '../../../helpers/auth';
-import { getAccounts, getAccountInfo } from '../../../helpers/admin';
+// import { getAccounts, getAccountInfo } from '../../../helpers/admin';
 
 import { Input, Avatar, Badge, Modal, Timeline, Icon, Button } from 'antd';
 import { MdInbox, MdArrowDropDown } from 'react-icons/lib/md';
@@ -19,7 +19,7 @@ class HeaderNav extends Component {
     super(props);
     this.state = {
       notificationVisible: false,
-      infoVisible: false
+      infoVisible: false,
     };
   }
 
@@ -44,13 +44,13 @@ class HeaderNav extends Component {
 
   notificationVisible(setVis) {
     this.setState({
-      notificationVisible: setVis
+      notificationVisible: setVis,
     });
   }
 
   infoVisible(setVis) {
     this.setState({
-      infoVisible: setVis
+      infoVisible: setVis,
     });
   }
 
@@ -80,7 +80,7 @@ class HeaderNav extends Component {
               shape="square"
               style={{
                 color: '#fff',
-                backgroundColor: 'aquamarine'
+                backgroundColor: 'aquamarine',
               }}
               src={this.props.photoUrl !== null ? this.props.photoUrl : null}
             >
@@ -108,6 +108,7 @@ class HeaderNav extends Component {
             <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
           </Timeline>
         </Modal>
+
         <Modal
           title={`Welcome, ${this.props.name}`}
           style={{ position: 'absolute', top: 100, right: 20 }}
@@ -139,7 +140,7 @@ class HeaderNav extends Component {
               }}
             >
               Logout
-            </Button>
+            </Button>,
           ]}
         >
           {this.props.linkedAccounts.length >= 1 ? (
@@ -167,7 +168,7 @@ const mapStateToProps = state => ({
   photoUrl: state.user.photoUrl,
   isMin: state.user.is_min,
   account: state.accountSelected,
-  linkedAccounts: state.user.linkedAccounts
+  linkedAccounts: state.user.linkedAccounts,
 });
 
 const mapDispatchToProps = dispatch =>
@@ -176,7 +177,7 @@ const mapDispatchToProps = dispatch =>
       minimize,
       unMinimize,
       selectAccount,
-      changePage: page => push(page)
+      changePage: page => push(page),
     },
     dispatch
   );

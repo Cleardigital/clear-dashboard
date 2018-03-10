@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectAccount, addLinkedAccounts, toggleAccountModal } from '../../../modules/user';
-import { Avatar, Modal, Button } from 'antd';
+import { Modal } from 'antd';
 import { getUserInfo, getLinkedAccountsInfo } from '../../../helpers/user';
 
 import './Select-Account.css';

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import MainNav from '../navigation/main/MainNav';
+import PublicNav from '../navigation/public/PublicNav';
 
-class MainLayout extends Component {
+class PublicLayout extends Component {
   render() {
     return (
       <div>
-        <MainNav />
+        <PublicNav />
         <div>{this.props.children}</div>
       </div>
     );
   }
 }
-export default MainLayout;
+export default PublicLayout;

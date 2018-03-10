@@ -31,6 +31,11 @@ main {
   transition: 0.3s ease-in;
 }
 
+.user-layout {
+  position: relative;
+  top: 80px;
+}
+
 header {
   position: fixed;
   top: 0;

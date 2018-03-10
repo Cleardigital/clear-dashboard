@@ -2,7 +2,7 @@
   "name": "clear-dashboard",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://cleardigital.io/member",
+  "homepage": "https://cleardigital.io/member",
   "dependencies": {
     "antd": "3.2.3",
     "axios": "^0.16.2",

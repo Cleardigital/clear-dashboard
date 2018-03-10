@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'; // eslint-disable-line no-use-before-define
+// import { Link } from 'react-router-dom'; // eslint-disable-line no-use-before-define
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { logout } from '../../../helpers/auth';
+// import { logout } from '../../../helpers/auth';
 
-import Login from '../../ui/modal/Login';
+// import Login from '../../ui/modal/Login';
 
-import './main.css';
+import './PublicNav.css';
 
-class MainNav extends Component {
+class PublicNav extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,7 +28,9 @@ class MainNav extends Component {
   render() {
     return (
       <nav className="main-nav">
-        <img className="main-logo" src="https://cleardigital.io/images/clear_wide.png" alt="Clear Digital Logo" />
+        <a href="/">
+          <img className="main-logo" src="https://cleardigital.io/images/clear_wide.png" alt="Clear Digital Logo" />
+        </a>
         {/* <div className="main-link-wrapper">
             <Link to="/" className="main-link">
               Home
@@ -39,7 +41,7 @@ class MainNav extends Component {
 
             {this.props.authed === true ? (
               <span>
-                <Link to="/dashboard" className="main-link">
+                <Link to="/" className="main-link">
                   Dashboard
                 </Link>
                 <a
@@ -76,4 +78,4 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainNav);
+export default connect(mapStateToProps, mapDispatchToProps)(PublicNav);

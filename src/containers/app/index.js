@@ -8,17 +8,20 @@ import { firebaseAuth } from '../../config/constants';
 import { logIn, logOut } from '../../modules/user';
 import { notification, message } from 'antd';
 
-import MainLayout from '../../components/layouts/MainLayout';
+import PublicLayout from '../../components/layouts/PublicLayout';
+import DashboardLayout from '../../components/layouts/DashboardLayout';
 import UserLayout from '../../components/layouts/UserLayout';
 
-import Home from '../public/home';
+import Login from '../public/login';
 
-import Dashboard from '../user/dashboard';
-import Google from '../user/google';
-import Spotify from '../user/spotify';
-import Apple from '../user/apple';
-import Other from '../user/other';
-import Settings from '../user/settings';
+import Home from '../user/home';
+
+import Dashboard from '../dashboard/dashboard';
+import Google from '../dashboard/google';
+import Spotify from '../dashboard/spotify';
+import Apple from '../dashboard/apple';
+import Other from '../dashboard/other';
+import Settings from '../dashboard/settings';
 
 const openNotification = ({ type, message, description, duration }) => {
   notification[type]({
@@ -32,14 +35,17 @@ const openMessage = ({ type, content, duration }) => {
   message[type](content, duration);
 };
 
-const MainRoute = ({ component: Component, ...rest }) => (
+const PublicRoute = ({ component: Component, authed, ...rest }) => (
   <Route
     {...rest}
-    render={props => (
-      <MainLayout>
-        <Component setNotification={openNotification} setMessage={openMessage} {...props} />
-      </MainLayout>
-    )}
+    render={props =>
+      authed === false ? (
+        <PublicLayout>
+          <Component setNotification={openNotification} setMessage={openMessage} {...props} />
+        </PublicLayout>
+      ) : (
+        <Redirect to="/" />
+      )}
   />
 );
 
@@ -52,7 +58,21 @@ const UserRoute = ({ component: Component, authed, ...rest }) => (
           <Component setNotification={openNotification} setMessage={openMessage} {...props} />
         </UserLayout>
       ) : (
-        <Redirect to="/?redirect=Login" />
+        <Redirect to="/login" />
+      )}
+  />
+);
+
+const DashboardRoute = ({ component: Component, authed, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      authed === true ? (
+        <DashboardLayout>
+          <Component setNotification={openNotification} setMessage={openMessage} {...props} />
+        </DashboardLayout>
+      ) : (
+        <Redirect to="/login" />
       )}
   />
 );
@@ -78,14 +98,16 @@ class Main extends Component {
     return (
       <ConnectedRouter basename="/member" history={history}>
         <Switch>
-          <MainRoute exact path="/" component={Home} />
+          <PublicRoute authed={this.props.authed} path="/login" component={Login} />
 
-          <UserRoute authed={this.props.authed} path="/dashboard" component={Dashboard} />
-          <UserRoute authed={this.props.authed} path="/google" component={Google} />
-          <UserRoute authed={this.props.authed} path="/spotify" component={Spotify} />
-          <UserRoute authed={this.props.authed} path="/apple" component={Apple} />
-          <UserRoute authed={this.props.authed} path="/other" component={Other} />
-          <UserRoute authed={this.props.authed} path="/settings" component={Settings} />
+          <UserRoute authed={this.props.authed} path="/" component={Home} />
+
+          <DashboardRoute authed={this.props.authed} path="/dashboard" component={Dashboard} />
+          <DashboardRoute authed={this.props.authed} path="/google" component={Google} />
+          <DashboardRoute authed={this.props.authed} path="/spotify" component={Spotify} />
+          <DashboardRoute authed={this.props.authed} path="/apple" component={Apple} />
+          <DashboardRoute authed={this.props.authed} path="/other" component={Other} />
+          <DashboardRoute authed={this.props.authed} path="/settings" component={Settings} />
 
           <Route path="*" render={() => <div>Not Found</div>} />
         </Switch>

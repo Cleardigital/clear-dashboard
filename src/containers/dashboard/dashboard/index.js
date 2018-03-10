@@ -10,12 +10,12 @@ import { getAccountData } from '../../../helpers/user';
 
 const TabPane = Tabs.TabPane;
 
-class Home extends Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       name: '',
-      cross: [null, null]
+      cross: [null, null],
     };
   }
 
@@ -49,20 +49,20 @@ class Home extends Component {
     const data = [
       {
         x: 'January',
-        y: 39000
+        y: 39000,
       },
       {
         x: 'Feb',
-        y: 56340
+        y: 56340,
       },
       {
         x: 'March',
-        y: 45320
+        y: 45320,
       },
       {
         x: 'April',
-        y: 20350
-      }
+        y: 20350,
+      },
     ];
     return (
       <div className="dash-container">
@@ -128,7 +128,7 @@ class Home extends Component {
   handleClick = (data, event) => {
     console.log(data, event);
     this.setState({
-      cross: [data.x, data.y]
+      cross: [data.x, data.y],
     });
   };
   handleHover = event => {
@@ -139,15 +139,15 @@ class Home extends Component {
 const mapStateToProps = state => ({
   name: state.user.name,
   accountSelected: state.user.accountSelected,
-  linkedAccounts: state.user.linkedAccounts
+  linkedAccounts: state.user.linkedAccounts,
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      changePage: page => push(page)
+      changePage: page => push(page),
     },
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
