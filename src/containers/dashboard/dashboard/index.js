@@ -74,6 +74,9 @@ class Dashboard extends Component {
           </div>
           <div className="action-buttons">
             <Button type="primary" ghost="true" size="large" onClick={this.primeClick}>
+              Secondary
+            </Button>
+            <Button type="primary" size="large" onClick={this.primeClick}>
               Primary
             </Button>
           </div>

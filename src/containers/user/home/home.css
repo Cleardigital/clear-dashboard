@@ -1,4 +1,4 @@
-.user-home {
+.user-options {
   position: relative;
   width: 100%;
   padding: 10px 0 60px;
@@ -8,6 +8,11 @@
   background: -webkit-linear-gradient(to -45deg, #4e4376, #2b5876);
   background: linear-gradient(to -45deg, #4e4376, #2b5876); */
   background: #f6fafd;
+}
+.user-body {
+  height: auto;
+  max-width: 960px;
+  margin: 0 auto;
 }
 .user-container {
   height: auto;
@@ -45,4 +50,40 @@
 .user-home .action-title h1,
 .user-home .action-title h2 {
   /* color: white; */
+}
+
+.walk-box {
+  background: white;
+  border: 1px solid #e9ebf8;
+  border-radius: 6px;
+  box-shadow: 0 8px 12px 0 rgba(14, 36, 129, 0.08);
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.walk-flex {
+  padding-top: 0;
+}
+
+.walk-title {
+  position: relative;
+  padding-left: 50px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100%;
+}
+.walk-title svg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.help-links {
+  display: block;
+  text-align: center;
+}
+.help-links:nth-child(1) {
+  margin-top: 15px;
 }
