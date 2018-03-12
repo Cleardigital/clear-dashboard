@@ -28,8 +28,17 @@ class PublicNav extends Component {
   render() {
     return (
       <nav className="main-nav">
-        <a href="/">
-          <img className="main-logo" src="https://cleardigital.io/images/clear_wide.png" alt="Clear Digital Logo" />
+        <a
+          href="/"
+          style={{
+            width: '140px',
+            margin: '0 20px',
+            background: '#333',
+            height: '50px',
+            borderRadius: '5px',
+          }}
+        >
+          {/* <img className="main-logo" src="https://cleardigital.io/images/clear_wide.png" alt="Clear Digital Logo" /> */}
         </a>
         {/* <div className="main-link-wrapper">
             <Link to="/" className="main-link">

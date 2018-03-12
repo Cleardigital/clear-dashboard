@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'; // eslint-disable-line no-use-before-de
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import YouTube from 'react-youtube';
 
 import { TiTabsOutline, TiChartPieOutline } from 'react-icons/lib/ti';
 import {
@@ -54,29 +55,45 @@ class Home extends Component {
             </div>
             <div className="user-flex">
               <Link to="dashboard">
-                <article>
-                  <TiChartPieOutline size={34} color="#252739" />
+                <article
+                  style={{
+                    backgroundImage: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                  }}
+                >
+                  <TiChartPieOutline size={34} color="#2E3339" />
                   <h1>Dashboard</h1>
                   <p>Et repellendus quia at iure aspernatur magni natus.</p>
                 </article>
               </Link>
               <Link to="dashboard">
-                <article>
-                  <GoOrganization size={34} color="#252739" />
+                <article
+                  style={{
+                    backgroundImage: 'linear-gradient(to top, #4481eb 0%, #04befe 100%)',
+                  }}
+                >
+                  <GoOrganization size={34} color="#2E3339" />
                   <h1>Accounts</h1>
                   <p>Et repellendus quia at iure aspernatur magni natus.</p>
                 </article>
               </Link>
               <Link to="settings">
-                <article>
-                  <FaSliders size={34} color="#252739" />
+                <article
+                  style={{
+                    backgroundImage: 'linear-gradient(135deg, #76eea7, #4acf8c)',
+                  }}
+                >
+                  <FaSliders size={34} color="#2E3339" />
                   <h1>Settings</h1>
                   <p>Et repellendus quia at iure aspernatur magni natus.</p>
                 </article>
               </Link>
               <Link to="dashboard">
-                <article>
-                  <GoInfo size={34} color="#252739" />
+                <article
+                  style={{
+                    backgroundImage: 'linear-gradient(to bottom, #ffe259, #ffa751)',
+                  }}
+                >
+                  <GoInfo size={34} color="#2E3339" />
                   <h1>Help</h1>
                   <p>Et repellendus quia at iure aspernatur magni natus.</p>
                 </article>
@@ -99,15 +116,15 @@ class Home extends Component {
                 Primary
               </Button> */}
               <Select
-                placeholder="Resources"
-                style={{ width: 120 }}
+                placeholder="More Resources"
+                style={{ width: 160 }}
+                size="large"
                 onChange={e => {
                   console.log('pizza');
                 }}
               >
-                <Option value="jack">Jack</Option>
-                <Option value="lucy">Lucy</Option>
-                <Option value="Yiminghe">yiminghe</Option>
+                <Option value="jack">Visit Help Center</Option>
+                <Option value="lucy">Watch our Demos</Option>
               </Select>
             </div>
           </div>
@@ -116,7 +133,7 @@ class Home extends Component {
             type="flex"
             align="middle"
             style={{
-              padding: '40px 0',
+              padding: '20px 0',
             }}
           >
             <Col span={8}>
@@ -132,14 +149,22 @@ class Home extends Component {
             <Col span={16}>
               <div className="user-flex walk-flex">
                 <Link to="dashboard">
-                  <article>
+                  <article
+                    style={{
+                      borderLeft: '7px solid #EAA9E7',
+                    }}
+                  >
                     <FaConnectdevelop size={34} color="#252739" />
                     <h1>Distribution</h1>
                     <p>Et repellendus quia at iure aspernatur magni natus.</p>
                   </article>
                 </Link>
                 <Link to="dashboard">
-                  <article>
+                  <article
+                    style={{
+                      borderLeft: '7px solid #C5F2C1',
+                    }}
+                  >
                     <FaYoutubePlay size={34} color="#252739" />
                     <h1>Monetization</h1>
                     <p>Et repellendus quia at iure aspernatur magni natus.</p>
@@ -163,18 +188,16 @@ class Home extends Component {
                 </div>
 
                 <article>
-                  <iframe
-                    width="585"
-                    height="330"
-                    src="https://www.youtube.com/embed/AwklziE5HKo"
-                    frameborder="0"
-                    allow="autoplay; encrypted-media"
-                    allowfullscreen
-                    style={{
+                  <YouTube
+                    videoId="AwklziE5HKo"
+                    className={'walk-video'}
+                    opts={{
                       width: '585',
                       height: '330',
-                      margin: '20px 0 0',
+                      frameborder: '0',
+                      allow: 'autoplay; encrypted-media',
                     }}
+                    onReady={this._onReady}
                   />
                 </article>
               </div>
@@ -195,6 +218,9 @@ class Home extends Component {
                   <p>
                     <span>Account IP Address:</span> 192.92.132.12
                   </p>
+                  {/* <p>
+                    <span>Joined Cleardigital:</span> 04/12/15
+                  </p> */}
                 </article>
               </div>
               <div className="walk-box">
@@ -204,15 +230,15 @@ class Home extends Component {
                 </div>
                 <div>
                   <Link className="help-links" to="help">
-                    <Button type="primary" ghost="true" size="large" style={{ minWidth: 150 }}>
-                      FAQ
+                    <Button type="primary" ghost="true" style={{ minWidth: 100 }}>
+                      Faq
                     </Button>
                   </Link>
                   <div className="line-cut">
                     <span className="text-cut">or</span>
                   </div>
                   <Link className="help-links" to="settings">
-                    <Button type="primary" ghost="true" size="large" style={{ minWidth: 150 }}>
+                    <Button type="primary" ghost="true" style={{ minWidth: 100 }}>
                       Contact Us
                     </Button>
                   </Link>

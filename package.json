@@ -19,6 +19,7 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "react-scripts": "1.0.14",
     "react-transition-group": "^2.2.1",
+    "react-youtube": "^7.5.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "victory": "^0.25.6"

@@ -58,8 +58,18 @@ class HeaderNav extends Component {
     return (
       <nav>
         <div className="nav-left">
-          <Link className="top-logo" to="/">
-            <img src="https://cleardigital.io/images/clear_wide.png" alt="cleardigital logo" />
+          <Link
+            className="top-logo"
+            to="/"
+            style={{
+              width: '140px',
+              margin: '0 20px',
+              background: '#333',
+              height: '50px',
+              borderRadius: '5px',
+            }}
+          >
+            {/* <img src="https://cleardigital.io/images/clear_wide.png" alt="cleardigital logo" /> */}
           </Link>
           <Search
             placeholder="Search"
