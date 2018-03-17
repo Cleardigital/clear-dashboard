@@ -29,7 +29,7 @@ const baseLabelStyles = {
   fontSize,
   letterSpacing,
   padding: 10,
-  fill: charcoal,
+  fill: '#72737a',
   stroke: 'transparent',
 };
 

@@ -81,7 +81,7 @@ class HeaderNav extends Component {
         </div>
         <div className="nav-right">
           <div className="notifications" onClick={() => this.notificationVisible(true)}>
-            <Badge dot={true} style={{ backgroundColor: '#40c4ff' }}>
+            <Badge dot={true} style={{ backgroundColor: '#6c9fee' }}>
               <MdInbox size={24} color="#C0C5D0" />
             </Badge>
           </div>

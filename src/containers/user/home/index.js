@@ -57,7 +57,8 @@ class Home extends Component {
               <Link to="dashboard">
                 <article
                   style={{
-                    backgroundImage: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                    // backgroundImage: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                    background: '#5A79EE',
                   }}
                 >
                   <TiChartPieOutline size={34} color="#2E3339" />
@@ -68,7 +69,8 @@ class Home extends Component {
               <Link to="dashboard">
                 <article
                   style={{
-                    backgroundImage: 'linear-gradient(to top, #4481eb 0%, #04befe 100%)',
+                    // backgroundImage: 'linear-gradient(to top, #4481eb 0%, #04befe 100%)',
+                    background: '#6c9fee',
                   }}
                 >
                   <GoOrganization size={34} color="#2E3339" />
@@ -79,7 +81,8 @@ class Home extends Component {
               <Link to="settings">
                 <article
                   style={{
-                    backgroundImage: 'linear-gradient(135deg, #76eea7, #4acf8c)',
+                    // backgroundImage: 'linear-gradient(135deg, #76eea7, #4acf8c)',
+                    background: '#ffcc3d',
                   }}
                 >
                   <FaSliders size={34} color="#2E3339" />
@@ -90,7 +93,8 @@ class Home extends Component {
               <Link to="dashboard">
                 <article
                   style={{
-                    backgroundImage: 'linear-gradient(to bottom, #ffe259, #ffa751)',
+                    // backgroundImage: 'linear-gradient(to bottom, #ffe259, #ffa751)',
+                    background: '#fb9267',
                   }}
                 >
                   <GoInfo size={34} color="#2E3339" />
@@ -151,7 +155,7 @@ class Home extends Component {
                 <Link to="dashboard">
                   <article
                     style={{
-                      borderLeft: '7px solid #EAA9E7',
+                      borderLeft: '7px solid #42426d',
                     }}
                   >
                     <FaConnectdevelop size={34} color="#252739" />
@@ -162,7 +166,7 @@ class Home extends Component {
                 <Link to="dashboard">
                   <article
                     style={{
-                      borderLeft: '7px solid #C5F2C1',
+                      borderLeft: '7px solid #6BC2B6',
                     }}
                   >
                     <FaYoutubePlay size={34} color="#252739" />
@@ -208,7 +212,7 @@ class Home extends Component {
                   <FaUserSecret size={36} color="#252739" />
                   <h1>User Details</h1>
                 </div>
-                <article>
+                <div className="user-info">
                   <p>
                     <span>Name:</span> Richard Rosales
                   </p>
@@ -221,7 +225,7 @@ class Home extends Component {
                   {/* <p>
                     <span>Joined Cleardigital:</span> 04/12/15
                   </p> */}
-                </article>
+                </div>
               </div>
               <div className="walk-box">
                 <div className="action-title">

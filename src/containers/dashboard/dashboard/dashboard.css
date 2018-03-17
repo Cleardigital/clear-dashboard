@@ -1,0 +1,19 @@
+.dash-non {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.dash-non:nth-of-type(odd) {
+  background: #5a79ee;
+  color: white;
+}
+.dash-non:nth-of-type(odd) h3 {
+  color: white;
+}
+
+.dash-non span {
+  font-size: 3.1rem;
+  text-align: right;
+}

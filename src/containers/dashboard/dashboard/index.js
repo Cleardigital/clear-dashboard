@@ -5,8 +5,11 @@ import { connect } from 'react-redux';
 import { Button, Row, Col, Card, Tabs } from 'antd';
 import Dash from 'react-icons/lib/ti/chart-pie-outline';
 import VertBar from '../../../components/ui/graphs/vertBar';
+import AreaLine from '../../../components/ui/graphs/areaLine';
+import HalfPie from '../../../components/ui/graphs/halfPie';
 
 import { getAccountData } from '../../../helpers/user';
+import './dashboard.css';
 
 const TabPane = Tabs.TabPane;
 
@@ -84,28 +87,69 @@ class Dashboard extends Component {
         <Row gutter={16} style={{ margin: '0px -8px 20px' }}>
           <Col span={16}>
             <Card
-              title="Youtube Data"
+              title="Overview"
               bodyStyle={{ padding: 0, minHeight: 300 }}
               loading={this.props.accountSelected === null ? true : false}
             >
-              <VertBar cross={this.state.cross} data={data} handleHover={this.handleHover} />
+              <AreaLine data={data} handleHover={this.handleHover} />
             </Card>
           </Col>
           <Col span={8}>
             <Card
-              title="Account Data"
-              bodyStyle={{ padding: 0, minHeight: 300 }}
+              title="Account Details"
+              bodyStyle={{ padding: 20, minHeight: 300 }}
               loading={this.props.accountSelected === null ? true : false}
-            />
+            >
+              <p>
+                <span>Name:</span> Richard Rosales
+              </p>
+              <p>
+                <span>Email:</span> theenumber3@gmail.com
+              </p>
+              <p>
+                <span>Account IP Address:</span> 192.92.132.12
+              </p>
+              <Button type="primary">Need Help?</Button>
+            </Card>
+          </Col>
+        </Row>
+        <Row gutter={16} style={{ margin: '0px -8px 20px' }}>
+          <Col span={24}>
+            <Card
+              // title="Account Data"
+              bodyStyle={{
+                padding: 0,
+                minHeight: 150,
+                display: 'flex',
+                flexFlow: 'row',
+                alignItems: 'stretch',
+              }}
+              loading={this.props.accountSelected === null ? true : false}
+            >
+              <div className="dash-non">
+                <h3>Times Played</h3>
+                <span>$194,254</span>
+              </div>
+              <div className="dash-non">
+                <h3>Total Revenue</h3>
+                <span>$47,266</span>
+              </div>
+              <div className="dash-non">
+                <h3>Gross Income</h3>
+                <span>$19,205</span>
+              </div>
+            </Card>
           </Col>
         </Row>
         <Row gutter={16} style={{ margin: '0px -8px 20px' }}>
           <Col span={8}>
             <Card
-              title="History Data"
+              title="Providor Split"
               bodyStyle={{ padding: 0, minHeight: 300 }}
               loading={this.props.accountSelected === null ? true : false}
-            />
+            >
+              <HalfPie data={data} handleHover={this.handleHover} />
+            </Card>
           </Col>
           <Col span={16}>
             <Card
